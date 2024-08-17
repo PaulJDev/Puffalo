@@ -1,7 +1,5 @@
 # Puffalo! 🐃
 
-![Puffalo Logo](./assets/icons/png/readme_logo.png)
-
 **Puffalo!** is a fun and lightweight application that keeps your mouse moving to prevent your computer from going to sleep or staying inactive while you work. With a simple interface and a whimsical name, Puffalo! is your new desktop buddy.
 
 ## 🚀 Features
