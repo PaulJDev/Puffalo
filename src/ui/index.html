@@ -1,0 +1,96 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' https://unpkg.com; img-src 'self' data:; connect-src 'self'; font-src 'self';"
+    /> -->
+    <title>Puffalo</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/xp.css" />
+  </head>
+  <body>
+    <div class="window">
+      <div class="title-bar">
+        <div>
+          <div class="title-bar-text">Puffalo</div>
+        </div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize" data-action="minimize"></button>
+          <button aria-label="Close" data-action="close"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <menu role="tablist">
+          <button aria-controls="controls" aria-selected="true">Control panel</button>
+          <button aria-controls="configuration">Configuration</button>
+        </menu>
+
+        <article role="tabpanel" id="controls">
+          <fieldset>
+            <legend>Time left</legend>
+            <progress value="0" max="100"></progress>
+          </fieldset>
+
+          <fieldset>
+            <legend>Actions</legend>
+            <div class="field-row">
+              <input id="start" value="start" type="radio" name="action" checked />
+              <label for="start">Start</label>
+            </div>
+            <div class="field-row">
+              <input id="pause" value="pause" type="radio" name="action" />
+              <label for="pause">Pause</label>
+            </div>
+          </fieldset>
+        </article>
+        <article role="tabpanel" id="configuration" hidden>
+          <form>
+            <fieldset>
+              <legend>Set pixels</legend>
+              <div class="field-row-stacked">
+                <input id="pixels" type="number" name="pixels" min="1" value="1" />
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Set a time</legend>
+              <div class="field-row-stacked">
+                <input id="time" type="number" name="time" min="1" value="1" />
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Time units</legend>
+              <div class="field-row">
+                <input id="seconds" value="seconds" type="radio" name="timeUnitOption" />
+                <label for="seconds">Second/s</label>
+              </div>
+              <div class="field-row">
+                <input id="minutes" value="minutes" type="radio" name="timeUnitOption" checked />
+                <label for="minutes">Minute/s</label>
+              </div>
+              <div class="field-row">
+                <input id="hours" value="hours" type="radio" name="timeUnitOption" />
+                <label for="hours">Hour/s</label>
+              </div>
+            </fieldset>
+            <section class="field-row flex center">
+              <button>Save</button>
+            </section>
+          </form>
+        </article>
+
+        <section class="field-row flex end">
+          <button data-action="minimize">OK</button>
+          <button data-action="close">Close</button>
+        </section>
+      </div>
+    </div>
+    <script src="./renderer.js"></script>
+    <script src="./scripts/tabSelector.js"></script>
+    <script src="./scripts/configuration.js" type="module"></script>
+    <script src="./scripts/controls.js" type="module"></script>
+  </body>
+</html>

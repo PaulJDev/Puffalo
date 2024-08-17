@@ -1,0 +1,52 @@
+{
+  "name": "puffalo",
+  "description": "Puffalo, simple as a puff",
+  "version": "1.0.0",
+  "main": "src/main/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon --watch src --exec \"electron .\"",
+    "package": "rimraf package && electron-packager . Puffalo --platform=win32 --arch=x64 --out=package --overwrite --icon=./assets/icons/ico/logo.ico",
+    "build": "rimraf dist && electron-builder",
+    "lint": "standard src/**/*.js",
+    "format": "prettier --write src/**/*"
+  },
+  "keywords": [],
+  "author": "Paul Javaloyes <pauljavaloyesdev@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "31.4.0",
+    "electron-builder": "24.13.3",
+    "electron-packager": "17.1.2",
+    "nodemon": "3.1.4",
+    "prettier": "3.3.3",
+    "rimraf": "6.0.1",
+    "standard": "17.1.0"
+  },
+  "build": {
+    "appId": "com.puffalo",
+    "productName": "Puffalo!",
+    "files": [
+      "src/**/*",
+      "node_modules/**/*",
+      "package.json",
+      "assets/icons/ico/**/*"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "./assets/icons/ico/logo.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "dependencies": {
+    "@jitsi/robotjs": "0.6.13",
+    "dotenv": "16.4.5",
+    "electron-store": "10.0.0"
+  }
+}

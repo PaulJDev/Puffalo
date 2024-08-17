@@ -1,0 +1,27 @@
+.title-bar {
+  -webkit-app-region: drag;
+}
+
+.title-bar-controls {
+  -webkit-app-region: no-drag;
+}
+
+progress {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.center {
+  justify-content: center;
+}
+
+.end {
+  justify-content: flex-end;
+}
+
+.window {
+  max-width: 600px;
+}
